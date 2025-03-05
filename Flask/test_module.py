@@ -126,3 +126,30 @@
 # print(pathlib.Path(__file__).parent.absolute())
 # with open("config.json","r") as file :
 #     print(json.load(file))
+
+# --------------------------------------------------------------------------
+
+import asyncio
+import time
+
+async def main():
+    print("hello,it's a async test program")
+    await asyncio.sleep(1)
+    print("hello again")
+
+async def mainloop():
+    timestart = time.time()
+    tasks = [asyncio.create_task(main()) for i in range(10)]
+    # [await i for i in tasks]
+    await asyncio.gather(*tasks)
+    print(tasks)
+    print(*tasks)
+    # for i in range(10):
+    #     await asyncio.create_task(main())
+    print(f"time spent here is {time.time() - timestart} seconds")
+
+coroutine = main()
+print(coroutine)
+
+asyncio.run(mainloop())
+

@@ -1,7 +1,7 @@
 # python+flask+vue3_practice
 
 #### Description
-python+flask+vue3项目学习+实践
+这是一个flask+vue3的Demo项目
 
 #### Software Architecture
 Software architecture description

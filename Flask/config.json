@@ -1,0 +1,17 @@
+{
+    "mysql": {
+        "ServerHost": "",
+        "MysqlUser":"",
+        "MysqlPassword": "",
+        "Datebase": ""
+    },
+    "redis": {
+        "ServerHost": "",
+        "password": ""
+    },
+    "stmpServer":{
+        "serverHost":"",
+        "serverUser":"",
+        "userPassword":""
+    }
+}
