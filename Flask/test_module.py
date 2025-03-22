@@ -129,27 +129,90 @@
 
 # --------------------------------------------------------------------------
 
-import asyncio
+# import asyncio
+# import time
+
+# async def main():
+#     print("hello,it's a async test program")
+#     await asyncio.sleep(1)
+#     print("hello again")
+
+# async def mainloop():
+#     timestart = time.time()
+#     tasks = [asyncio.create_task(main()) for i in range(10)]
+#     # [await i for i in tasks]
+#     await asyncio.gather(*tasks)
+#     print(tasks)
+#     print(*tasks)
+#     # for i in range(10):
+#     #     await asyncio.create_task(main())
+#     print(f"time spent here is {time.time() - timestart} seconds")
+
+# coroutine = main()
+# print(coroutine)
+
+# asyncio.run(mainloop())
+
+# --------------------------------------------------------------------------
+# from projTool import redis_pool_conn
+
+# print(redis_pool_conn().ttl("asaddadbc"))
+# redis_connect = redis.Redis(connection_pool=redis_pool)
+# print(redis_connect.ping())
+
+# --------------------------------------------------------------------------
+# from projTool import mysql_pool_conn
+
+# with mysql_pool_conn as mysql_conn:
+#     mysql_conn.cursor.execute("select * from flask_Prac.visitRecord limit 1")
+#     print(mysql_conn.cursor.fetchall())
+
+# with mysql_pool_conn as mysql_conn:
+#     mysql_conn.cursor.execute("select * from flask_Prac.visitRecord limit 1,1")
+#     print(mysql_conn.cursor.fetchall())
+# --------------------------------------------------------------------------
+
+# from flask import jsonify
+
+# print(jsonify({1:1,2:2}))
+
+# --------------------------------------------------------------------------
+
+import jwt
+import secrets
 import time
+from projTool import jwt_verify
 
-async def main():
-    print("hello,it's a async test program")
-    await asyncio.sleep(1)
-    print("hello again")
+key = secrets.token_hex()
+payload = {"test":123,"test2":456,"exp":time.time()+3}
+header = {"type":"jwt","algorithm":"HS256"}
+token = jwt.encode(payload,key,algorithm="HS256")
+print(token)
+# token = token[:-2]
+# time.sleep(5)
+decode_token = jwt_verify(token=None,key=key)
+# decode_token = jwt.decode_complete(token,key,algorithms="HS256")
+# print(decode_token)
 
-async def mainloop():
-    timestart = time.time()
-    tasks = [asyncio.create_task(main()) for i in range(10)]
-    # [await i for i in tasks]
-    await asyncio.gather(*tasks)
-    print(tasks)
-    print(*tasks)
-    # for i in range(10):
-    #     await asyncio.create_task(main())
-    print(f"time spent here is {time.time() - timestart} seconds")
+# --------------------------------------------------------------------------
 
-coroutine = main()
-print(coroutine)
+# import timeit
 
-asyncio.run(mainloop())
+# minus_01 = """
+# time01 = int(time.time())
+# time02 = int(time.time())
+# timedelta = time02-time01
+# timedelta < 1
+# """
 
+# minus_02 = """
+# time01 = time.time()
+# time02 = time.time()
+# timedelta = time02-time01
+# timedelta < 1
+# """
+# minus_01_time = timeit.timeit(minus_01,"import time", number=1000000)
+# minus_02_time = timeit.timeit(minus_02,"import time", number=1000000)
+# print(minus_01_time, minus_02_time)
+
+# --------------------------------------------------------------------------

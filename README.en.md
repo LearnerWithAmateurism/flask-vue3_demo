@@ -1,10 +1,18 @@
-# python+flask+vue3_practice
+# flask-vue3_demo
 
 #### Description
-这是一个flask+vue3的Demo项目
+This is a Flask + Vue3 demo project,  
+which is  a simple demo to showcase my previous experience with Flask and Vue3.
 
+Currently, the Flask project actualizes a user managment service, which provides application interfaces for user registration, login, logout, and more.   
+The interfaces in api4Test are for testing purposes, specifically for the [autotest demo project](https://gitee.com/bulbulbard/pytest_autotest-demo.git) that I written.
 #### Software Architecture
-Software architecture description
+The backend service is based on python3.11.  
+Flask is the main framework, with Mysql as the database and Redis for data caching and message queue.
+
+The frontend service is based on Vue3.
+
+Additionally, containerization tools such as docker and docker-compose are used to support the web service's runtime environment.
 
 #### Installation
 
@@ -25,12 +33,3 @@ Software architecture description
 3.  Commit your code
 4.  Create Pull Request
 
-
-#### Gitee Feature
-
-1.  You can use Readme\_XXX.md to support different languages, such as Readme\_en.md, Readme\_zh.md
-2.  Gitee blog [blog.gitee.com](https://blog.gitee.com)
-3.  Explore open source project [https://gitee.com/explore](https://gitee.com/explore)
-4.  The most valuable open source project [GVP](https://gitee.com/gvp)
-5.  The manual of Gitee [https://gitee.com/help](https://gitee.com/help)
-6.  The most popular members  [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
